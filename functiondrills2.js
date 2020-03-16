@@ -21,3 +21,24 @@ function beyond(num) {
 }
 
 beyond(50);
+
+function decode(sentence) {
+  let words = sentence.split(' ');
+  let decodedWord = '';
+  for (let i = 0; i < words.length; i++) {
+      if (words[i][0] === 'a') {
+        decodedWord += words[i][1];
+      } else if (words[i][0] === 'b') {
+        decodedWord += words[i][2];
+      } else if (words[i][0] === 'c') {
+        decodedWord += words[i][3];
+      } else if (words[i][0] === 'd') {
+        decodedWord += words[i][4];
+      } else {
+        decodedWord += ' ';
+      }
+  }
+  return decodedWord;
+}
+
+console.log(decode('craft block argon meter bells brown croon droop'));
