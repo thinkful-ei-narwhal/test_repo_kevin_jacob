@@ -21,3 +21,62 @@ function beyond(num) {
 }
 
 beyond(50);
+
+function howManyDays(month, leapYear) {
+  if(typeof month !== 'string') {
+    throw new Error('Must provide a vaild month')
+  }
+  switch(month) {
+    case 'January':
+    case 'March':
+    case 'May':
+    case 'July':
+    case 'August':
+    case 'October':
+    case 'December':
+      console.log(`There are 31 days in ${month}`);
+      break;
+    case 'February':
+      if (leapYear === false)
+      console.log('There are 29 days in February');
+      else {
+        console.log('There are 28 days in February');
+      }
+      break;
+    case 'April':
+    case 'June':
+    case 'September':
+    case 'November':
+        console.log(`There are 30 days in ${month}`);
+    
+  }
+}
+
+howManyDays('February', false);
+
+function rockPaperScissors(num) {
+  const randomNo = Math.floor(Math.random()*3)+1;
+  if(num > 3){
+    throw new Error('Enter a number between 1 and 3')
+  }
+  if(num === randomNo) {
+    console.log('You Tie')
+  }  
+  else if (num === 1 && randomNo === 3) {
+    console.log('You Win')
+  }  
+  else if(num === 3 && randomNo === 2) {
+    console.log('You Win')
+  } 
+  else if(num === 2 && randomNo === 1) {
+    console.log('You Win')
+  } 
+  else if(num === 1 && randomNo === 2) {
+    console.log('You Lose')
+  } 
+  else if(num === 2 && randomNo === 3) {
+    console.log('You Lose')
+  } 
+}
+
+rockPaperScissors(1);
